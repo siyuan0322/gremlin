@@ -32,6 +32,7 @@ public class Main {
         Cluster cluster = builder.create();
         grootClient = GrootClient.newBuilder().addHost(host, grpcPort).build();
         gremlinClient = cluster.connect();
+        cluster.getReconnectInterval();
     }
 
     public void close() {
